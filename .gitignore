@@ -1,0 +1,6 @@
+LT.exe
+Lib/
+Scripts/
+geckodriver.log
+lt.log
+pyvenv.cfg
