@@ -4,3 +4,4 @@ Scripts/
 geckodriver.log
 lt.log
 pyvenv.cfg
+venv/
