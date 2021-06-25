@@ -1,12 +1,27 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import os
 
-driver = webdriver.Chrome()
-driver.get("https://tech-with-moss.github.io/sample-todo-app/")
+url = os.getenv("LT_HUB_URL")
+capabilities = {
+    "build" : "Test Build",
+    "name" : "Quick Test",
+    "platform" : "Windows 10",
+    "browserName" : "Chrome",
+    "version" : "88.0",
+    "resolution" : "1920x1080",
+    "tunnel" : True
+}
+
+driver = webdriver.Remote(
+    desired_capabilities= capabilities,
+    command_executor= url
+)
+driver.get("http://localhost:8080/")
 driver.find_element_by_name("li3").click()
 
 textbox = driver.find_element_by_id("sampletodotext")
 textbox.send_keys("Testing")
 driver.find_element_by_id("addbutton").click()
 assert "No results found." not in driver.page_source
-driver.close()
+driver.quit()
