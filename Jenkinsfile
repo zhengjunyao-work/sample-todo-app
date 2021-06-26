@@ -20,6 +20,7 @@ pipeline {
             sh 'sleep 10'
             sh 'python3 -m http.server 8081 &'
             sh 'pwd'
+            sh 'ls'
             sh 'python3 sample-todo-app/test_sample_todo_app.py'
             sh 'pkill -f "http.server"'
             sh 'sleep 30'
