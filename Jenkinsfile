@@ -9,7 +9,6 @@ pipeline {
       stage('Setup') {
         steps {
             cleanWs()
-            git branch: 'main', credentialsId: 'github-key', url: 'git@github.com:tech-with-moss/sample-todo-app.git'
             sh 'wget https://downloads.lambdatest.com/tunnel/v3/linux/64bit/LT_Linux.zip'
             //sh 'sudo apt-get install zip unzip'
             sh 'unzip -o LT_Linux.zip'
