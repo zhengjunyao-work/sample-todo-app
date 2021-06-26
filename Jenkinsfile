@@ -8,7 +8,6 @@ pipeline {
 
       stage('Setup') {
         steps {
-            cleanWs()
             sh 'wget https://downloads.lambdatest.com/tunnel/v3/linux/64bit/LT_Linux.zip'
             //sh 'sudo apt-get install zip unzip'
             sh 'unzip -o LT_Linux.zip'
@@ -19,9 +18,7 @@ pipeline {
         steps {
             sh 'sleep 10'
             sh 'python3 -m http.server 8081 &'
-            sh 'pwd'
-            sh 'ls'
-            sh 'python3 sample-todo-app/test_sample_todo_app.py'
+            sh 'python3 test_sample_todo_app.py'
             sh 'pkill -f "http.server"'
             sh 'sleep 30'
             sh 'pkill -f "jenkins-tunnel"'
