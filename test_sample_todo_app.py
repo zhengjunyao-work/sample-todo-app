@@ -25,4 +25,4 @@ textbox.send_keys("Testing")
 driver.find_element_by_id("addbutton").click()
 assert "No results found." not in driver.page_source
 driver.execute_script("lambda-status=passed")
-driver.quit()
+driver.close()
