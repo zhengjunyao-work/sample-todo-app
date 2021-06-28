@@ -4,9 +4,17 @@ import os
 import json
 
 url = os.getenv("LT_HUB_URL")
-capabilities = json.loads(str(os.getenv("LT_BROWSERS")))
+capabilities = {
+    "build" : os.getenv("LT_BUILD_NAME"),
+    "name" : "Quick Test",
+    "platform" : "Windows 10",
+    "browserName" : "Chrome",
+    "version" : "88.0",
+    "resolution" : "1920x1080",
+    "tunnel" : True
+}
 driver = webdriver.Remote(
-    desired_capabilities= capabilities[0],
+    desired_capabilities= capabilities,
     command_executor= url
 )
 driver.get("http://localhost:8081/")
