@@ -3,18 +3,9 @@ from selenium.webdriver.common.keys import Keys
 import os
 
 url = os.getenv("LT_HUB_URL")
-capabilities = {
-    "build" : os.getenv("LT_BUILD_NAME"),
-    "name" : "Quick Test",
-    "platform" : "Windows 10",
-    "browserName" : "Chrome",
-    "version" : "88.0",
-    "resolution" : "1920x1080",
-    "tunnel" : True
-}
+
 
 driver = webdriver.Remote(
-    desired_capabilities= capabilities,
     command_executor= url
 )
 driver.get("http://localhost:8081/")
