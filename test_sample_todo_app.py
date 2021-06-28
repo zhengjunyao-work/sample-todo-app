@@ -3,9 +3,10 @@ from selenium.webdriver.common.keys import Keys
 import os
 
 url = os.getenv("LT_HUB_URL")
-
+capabilities = os.getenv("LT_BROWSERS")
 
 driver = webdriver.Remote(
+    desired_capabilities= capabilities,
     command_executor= url
 )
 driver.get("http://localhost:8081/")
