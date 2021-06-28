@@ -5,10 +5,8 @@ import json
 
 url = os.getenv("LT_HUB_URL")
 capabilities = json.loads(str(os.getenv("LT_BROWSERS")))
-print(type(capabilities))
-print(capabilities[0])
 driver = webdriver.Remote(
-    desired_capabilities= capabilities,
+    desired_capabilities= capabilities[0],
     command_executor= url
 )
 driver.get("http://localhost:8081/")
