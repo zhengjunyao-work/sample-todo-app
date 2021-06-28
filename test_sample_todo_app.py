@@ -4,6 +4,8 @@ import os
 
 url = os.getenv("LT_HUB_URL")
 capabilities = os.getenv("LT_BROWSERS")
+print (capabilities)
+print (capabilities[0])
 
 driver = webdriver.Remote(
     desired_capabilities= capabilities,
