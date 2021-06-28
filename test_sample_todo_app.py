@@ -6,6 +6,7 @@ import json
 url = os.getenv("LT_HUB_URL")
 capabilities = json.loads(str(os.getenv("LT_BROWSERS")))
 print(type(capabilities))
+print capabilities[0]
 driver = webdriver.Remote(
     desired_capabilities= capabilities,
     command_executor= url
