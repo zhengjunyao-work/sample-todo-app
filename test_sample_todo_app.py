@@ -4,7 +4,7 @@ import os
 import json
 
 url = os.getenv("LT_HUB_URL")
-capabilities = json.loads(os.getenv("LT_BROWSERS"))
+capabilities = json.loads(str(os.getenv("LT_BROWSERS")))
 
 driver = webdriver.Remote(
     desired_capabilities= capabilities,
