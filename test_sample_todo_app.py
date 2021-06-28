@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import os
-import ast
+import json
 
 url = os.getenv("LT_HUB_URL")
-capabilities = ast.literal_eval(os.environ["LT_BROWSERS"])
+capabilities = json.loads(os.getenv("LT_BROWSERS"))
 
 driver = webdriver.Remote(
     desired_capabilities= capabilities,
