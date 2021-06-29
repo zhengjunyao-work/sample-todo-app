@@ -1,9 +1,6 @@
 pipeline {
 
     agent any
-        environment {
-       LT_BUILD_NAME = "test-LT-pipeline"
-    }
     stages{
 
       stage('Setup') {
